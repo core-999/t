@@ -226,16 +226,16 @@ def main_buttons():
     kb = InlineKeyboardMarkup()
     kb.add(
          InlineKeyboardButton(
-            "➕Add To Your Group ထည့်သွင်းရန်",
+            "𝐀𝐝𝐝 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩",
             url=f"https://t.me/{BOT_USERNAME}?startgroup=s&delete_message+manage_video_chats_message+invite_users")
           )
     kb.row(    
-         InlineKeyboardButton("DEV", url="https://t.me/cores_999"),
-         InlineKeyboardButton(" စကားပြော ", url="https://t.me/myanmar_music_Bot2027")
+         InlineKeyboardButton("𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url="https://t.me/myanmarbot_music"),
+         InlineKeyboardButton(" 𝐒𝐔𝐏𝐏𝐎𝐑𝐓 ", url="https://t.me/myanmar_music_Bot2027")
           )
     kb.row(  
-        InlineKeyboardButton("Botပြုလုပ်လိုပါက", url="tg://resolve?domain=cores_999&text=Botအသစ်လုပ်ချင်လို့ပါ"),
-        InlineKeyboardButton("UPDATE", url="https://t.me/myanmarbot_music")
+        InlineKeyboardButton("𝟗𝟗𝟗", url="tg://resolve?domain=cores_999&text=𝐑𝐞𝐩𝐥𝐚𝐲_𝐁𝐨𝐭"),
+        InlineKeyboardButton("𝐀𝐥𝐥 𝐁𝐎𝐓", url="https://t.me/myanmarbot_music/53")
           )
     return kb
 # ======================
@@ -268,7 +268,7 @@ def toggle_reply_callback(call):
     data.setdefault("reply_on_chats", {})[key] = new_status
     save_data()
 
-    btn_text = "🟢 Bot စာပြန်ခြင်း: ON" if new_status else "🔴 Bot စာပြန်ခြင်း: OFF"
+    btn_text = "🟢 𝐁𝐨𝐭 စာပြန်ခြင်း: ON" if new_status else "🔴 𝐁𝐨𝐭 စာပြန်ခြင်း: OFF"
     kb = InlineKeyboardMarkup().add(InlineKeyboardButton(btn_text, callback_data="toggle_reply"))
 
     try:
@@ -276,7 +276,7 @@ def toggle_reply_callback(call):
     except Exception:
         # ignore edit errors (message may be non-editable)
         pass
-    bot.answer_callback_query(call.id, f"Bot စာပြန်ခြင်းကို {'ဖွင့်' if new_status else 'ပိတ်'} လိုက်ပါပြီ။")        
+    bot.answer_callback_query(call.id, f"𝐁𝐨𝐭 စာပြန်ခြင်းကို {'ဖွင့်' if new_status else 'ပိတ်'} လိုက်ပါပြီ။")        
 
 # ======================
 # ADMIN CONFIG COMMANDS
@@ -575,10 +575,10 @@ def reply_toggle(message):
     print(f"[DEBUG] /rp toggled in {chat_id}: {current_status} -> {new_status}")
     
     kb = InlineKeyboardMarkup()
-    btn_text = "🟢 Bot စာပြန်ခြင်း: ON" if new_status else "🔴 Bot စာပြန်ခြင်း: OFF"
+    btn_text = "🟢 𝐁𝐨𝐭 စာပြန်ခြင်း: ON" if new_status else "🔴 𝐁𝐨𝐭 စာပြန်ခြင်း: OFF"
     kb.add(InlineKeyboardButton(btn_text, callback_data="toggle_reply"))
     
-    bot.send_message(chat_id, f"<tg-emoji emoji-id='5251299553239398548'>🤖</tg-emoji> <b>Bot စာပြန်ခြင်း စနစ်ကို {'ဖွင့်' if new_status else 'ပိတ်'} လိုက်ပါပြီ།</b>\n\n{btn_text}", 
+    bot.send_message(chat_id, f"<tg-emoji emoji-id='5251299553239398548'>🤖</tg-emoji> <b>𝐁𝐨𝐭 စာပြန်ခြင်း စနစ်ကို {'ဖွင့်' if new_status else 'ပိတ်'} လိုက်ပါပြီ།</b>\n\n{btn_text}", 
                      reply_markup=kb, parse_mode="HTML")        
 
 @bot.message_handler(commands=["id"])
@@ -703,22 +703,22 @@ def start(message):
         if not is_joined(user_id):
             join_kb = InlineKeyboardMarkup()
             clean_channel = FORCE_JOIN_CHANNEL.replace('@', '')
-            join_kb.add(InlineKeyboardButton("Channal Join ပေးပါ", url=f"https://t.me/{clean_channel}"))
-            join_kb.add(InlineKeyboardButton("🔄  (စစ်ဆေးမည်)", url=f"https://t.me/{BOT_USERNAME}?start=start"))
+            join_kb.add(InlineKeyboardButton("𝐂𝐡𝐚𝐧𝐧𝐞𝐥 𝐣𝐨𝐢𝐧", url=f"https://t.me/{clean_channel}"))
+            join_kb.add(InlineKeyboardButton("𝐣𝐨𝐢𝐧(စစ်ဆေးမည်)", url=f"https://t.me/{BOT_USERNAME}?start=start"))
             
             return bot.send_message(
                 message.chat.id, 
-                "<tg-emoji emoji-id='6269316311172518259'>❌</tg-emoji> <b>အသုံးပြုခွင့်မရှိသေးပါ!</b> <tg-emoji emoji-id='6257780484281997093'>❌</tg-emoji>\n\nဒီ Bot ကို သုံးဖို့အတွက် Group ကို အရင် Join ပေးရပါမယ်။",
+                "<tg-emoji emoji-id='6269316311172518259'>❌</tg-emoji> <b>အသုံးပြုခွင့်မရှိသေးပါ!</b> <tg-emoji emoji-id='6257780484281997093'>❌</tg-emoji>\n\nဒီ 𝐁𝐨𝐭 ကို သုံးဖို့အတွက် 𝐆𝐫𝐨𝐮𝐩 ကို အရင် 𝐉𝐨𝐢𝐧 ပေးရပါမယ်။",
                 reply_markup=join_kb
             )
 
     # ၃။ Join ထားပြီးသူများအတွက် ပြသမည့် စာသား
     bot.send_message(
         message.chat.id, 
-        "<tg-emoji emoji-id='5251299553239398548'>🤖</tg-emoji> <b>𝙼𝚢𝚊𝚗𝚖𝚊𝚛 𝙵𝚛𝚒𝚎𝚗𝚍 Bot Online!</b>\n\n"
-        "<tg-emoji emoji-id='5240241223632954241'>🚫</tg-emoji> Bio / Join / Link spam auto delete\n"
-        "<tg-emoji emoji-id='6271786398404055377'>⚠️</tg-emoji> 3 Warnings = Auto Mute\n\n"
-        "<tg-emoji emoji-id='5226945370684140473'>➕</tg-emoji> Bot ကို Group ထဲထည့်ပြီး Admin ပေးထားပါ။<tg-emoji emoji-id='5226945370684140473'>➕</tg-emoji> ",
+        "<tg-emoji emoji-id='5251299553239398548'>🤖</tg-emoji> <b>𝐀𝐮𝐭𝐨 𝐑𝐞𝐩𝐥𝐲 & 𝐒𝐩𝐚𝐦 𝐥𝐢𝐧𝐤 𝐆𝐫𝐨𝐮𝐩 𝐇𝐞𝐥𝐩 𝐁𝐨𝐭 Online!</b>\n\n"
+        "<tg-emoji emoji-id='5240241223632954241'>🚫</tg-emoji> 𝐁𝐢𝐨 / 𝐉𝐨𝐢𝐧 / 𝐋𝐢𝐧𝐤 𝐬𝐩𝐚𝐦 𝐚𝐮𝐭𝐨 𝐝𝐞𝐥𝐞𝐭𝐞\n"
+        "<tg-emoji emoji-id='6271786398404055377'>⚠️</tg-emoji> 𝟑 𝐖𝐚𝐫𝐧𝐢𝐧𝐠𝐬 = 𝐀𝐮𝐭𝐨 𝐌𝐮𝐭𝐞\n\n"
+        "<tg-emoji emoji-id='5226945370684140473'>➕</tg-emoji> 𝐁𝐨𝐭 ကို 𝐆𝐫𝐨𝐮𝐩 ထဲထည့်ပြီး 𝐀𝐝𝐦𝐢𝐧 ပေးထားပါ။<tg-emoji emoji-id='5226945370684140473'>➕</tg-emoji> ",
         reply_markup=main_buttons()
     )
             
@@ -882,7 +882,7 @@ def welcome_group(message):
                     print(f"   Bot ID: {bot_id}, Is Bot: {user.id == bot_id}")
                     # Bot ကိုယ်တိုင် Group ထဲ ရောက်သွားတဲ့အခါ နှုတ်ဆက်ရန်
                     if user.id == bot_id:
-                        msg = "<tg-emoji emoji-id='5251299553239398548'>🤖</tg-emoji> <b> 𝙼𝚢𝚊𝚗𝚖𝚊𝚛 𝙵𝚛𝚒𝚎𝚗𝚍 Bot Active!</b>\n\n<tg-emoji emoji-id='5215613971352004352'>❤️</tg-emoji> ကျွန်​ေတာ်ကို Admin ပေးထားဖို့ မမေ့ပါနဲ့ဗျာ။ <tg-emoji emoji-id='5215361191051798408'>🤍</tg-emoji>\n\nSpam linkတွေနဲ့ bioတွေကို အလိုအလျောက် ဖျက်ပေးပါမယ်။",
+                        msg = "<tg-emoji emoji-id='5251299553239398548'>🤖</tg-emoji> <b> 𝐀𝐮𝐭𝐨 𝐑𝐞𝐩𝐥𝐲 & 𝐒𝐩𝐚𝐦 𝐥𝐢𝐧𝐤 𝐆𝐫𝐨𝐮𝐩 𝐇𝐞𝐥𝐩 𝐁𝐨𝐭 Active!</b>\n\n<tg-emoji emoji-id='5215613971352004352'>❤️</tg-emoji> ကျွန်​ေတာ်ကို 𝐀𝐝𝐦𝐢𝐧 ပေးထားဖို့ မမေ့ပါနဲ့ဗျာ။ <tg-emoji emoji-id='5215361191051798408'>🤍</tg-emoji>\n\n𝐒𝐩𝐚𝐦 𝐥𝐢𝐧𝐤တွေနဲ့ 𝐛𝐢𝐨 တွေကို အလိုအလျောက် ဖျက်ပေးပါမယ်။",
                         reply_markup=main_buttons()
                         bot.send_message(message.chat.id, msg, reply_markup=main_buttons())
                         print(f"✅ Bot welcome message sent to group {message.chat.id}")
@@ -906,8 +906,8 @@ def handle_chat_creation(message):
         # do not auto-approve; groups must be added manually with /addgp
         bot.send_message(
             message.chat.id,
-            "<tg-emoji emoji-id='5251299553239398548'>🤖</tg-emoji> Guard Help Bot Active!\n"
-            "Bio/Join/Link spam remove အတွက် Admin ပေးထားဖို့ လိုအပ်ပါတယ်။",
+            "<tg-emoji emoji-id='5251299553239398548'>🤖</tg-emoji>𝐇𝐞𝐥𝐩 𝐁𝐨𝐭 𝐀𝐜𝐭𝐢𝐯𝐞!\n"
+            "𝐁𝐢𝐨/𝐉𝐨𝐢𝐧/𝐋𝐢𝐧𝐤 𝐬𝐩𝐚𝐦 𝐫𝐞𝐦𝐨𝐯𝐞 အတွက် 𝐀𝐝𝐦𝐢𝐧 ပေးထားဖို့ လိုအပ်ပါတယ်။",
             reply_markup=main_buttons()
         )
     except Exception as e:
@@ -975,11 +975,11 @@ def handle_all(message):
         if not is_joined(user_id):
             join_kb = InlineKeyboardMarkup()
             clean_channel = FORCE_JOIN_CHANNEL.replace('@', '')
-            join_kb.add(InlineKeyboardButton(" Channel join", url=f"https://t.me/{clean_channel}"))
-            join_kb.add(InlineKeyboardButton(" Join (စစ်ဆေးမည်)", url=f"https://t.me/MYANMAR_FRIEND_BOT?start=start"))
+            join_kb.add(InlineKeyboardButton("𝐂𝐡𝐚𝐧𝐧𝐞𝐥 𝐣𝐨𝐢𝐧", url=f"https://t.me/{clean_channel}"))
+            join_kb.add(InlineKeyboardButton(" 𝐣𝐨𝐢𝐧 (စစ်ဆေးမည်)", url=f"https://t.me/{BOT_USERNAME}?start=start"))
             return bot.send_message(
                 message.chat.id,
-                "<tg-emoji emoji-id='6257780484281997093'>❌</tg-emoji> <b>အသုံးပြုခွင့်မရှိသေးပါ!</b>\n\nဒီ Bot ကို သုံးဖို့အတွက် Group ကို အရင် Join ပေးရပါမယ်။",
+                "<tg-emoji emoji-id='6257780484281997093'>❌</tg-emoji> <b>အသုံးပြုခွင့်မရှိသေးပါ!</b>\n\nဒီ 𝐁𝐨𝐭 ကို သုံးဖို့အတွက် 𝐒𝐔𝐏𝐏𝐎𝐑𝐓 ကို အရင် Join ပေးရပါမယ်။",
                 reply_markup=join_kb
             )
 
@@ -1002,12 +1002,12 @@ def handle_all(message):
             # သတိပေးစာ ပို့မယ်
             warn_text = "⚠️ <b>သတိပေးချက်</b>\n\n"
         if is_story:
-            warn_text += "<tg-emoji emoji-id='4918087434840834979'>ℹ️</tg-emoji> Story ပို့ခြင်းများကို ခွင့်မပြုပါ။\n"
+            warn_text += "<tg-emoji emoji-id='4918087434840834979'>ℹ️</tg-emoji> 𝐒𝐭𝐨𝐫𝐲 ပို့ခြင်းများကို ခွင့်မပြုပါ။\n"
         else:
-            warn_text += "<tg-emoji emoji-id='4918087434840834979'>ℹ️</tg-emoji> forwarded message များကို ခွင့်မပြုပါ။\n"
+            warn_text += "<tg-emoji emoji-id='4918087434840834979'>ℹ️</tg-emoji> 𝐟𝐨𝐫𝐰𝐚𝐫𝐝𝐞𝐝 𝐦𝐞𝐬𝐬𝐚𝐠𝐞 များကို ခွင့်မပြုပါ။\n"
             
         if message.from_user:
-            warn_text += f"<tg-emoji emoji-id='4913497231492908158'>👤</tg-emoji> User: {mention(message.from_user)}"
+            warn_text += f"<tg-emoji emoji-id='4913497231492908158'>👤</tg-emoji> 𝐔𝐬𝐞𝐫: {mention(message.from_user)}"
             
         bot.send_message(chat_id, warn_text, parse_mode="HTML")
         return
@@ -1041,7 +1041,7 @@ def handle_all(message):
         # Send warning
         bot.send_message(
             chat_id,
-            f"<tg-emoji emoji-id='6271786398404055377'>⚠️</tg-emoji> အက်မင်တစ်ခုမဟုတ်တဲ့ ဘော့ကနေ မှားတဲ့ လင့်/စာများ ပိုခြင်းကို ခွင့်မပြုပါ။\n\n👤 Bot: {mention(message.from_user)}",
+            f"<tg-emoji emoji-id='6271786398404055377'>⚠️</tg-emoji> အက်မင်တစ်ခုမဟုတ်တဲ့ ဘော့ကနေ မှားတဲ့ လင့်/စာများ ပိုခြင်းကို ခွင့်မပြုပါ။\n\n👤 𝐁𝐨𝐭: {mention(message.from_user)}",
             parse_mode=None
         )
         return
@@ -1074,7 +1074,7 @@ def handle_all(message):
             if matched_chat_word:
                 warn_msg = f"⚠️ သင့်စာထဲတွင် Group မှပိတ်ပင်ထားသော စကားပါနေသည်။ ({matched_chat_word})"
             else:
-                warn_msg = data.get("warning_text") or "⚠️ သတိပေးချက်: သင့်စာသားတွင် ဂျိုင်း/ဘိုင်အို/လင့် ထဲတွင် တစ်ခုခုပါသည်။"
+                warn_msg = data.get("warning_text") or "⚠️ သတိပေးချက်: သင့်စာသားတွင် ဂျိုင်း/ဘိုင်အို/လင့် တစ်ခုခုပါသည်။"
             bot.send_message(chat_id, warn_msg)
             # Detect reason
             try:
@@ -1111,7 +1111,7 @@ def handle_all(message):
 
                 bot.send_message(
                     chat_id,
-                    f"<tg-emoji emoji-id='6174589325695521740'>❌</tg-emoji> <b>Auto Mute</b> <tg-emoji emoji-id='6257780484281997093'>❌</tg-emoji>\n\n"
+                    f"<tg-emoji emoji-id='6174589325695521740'>❌</tg-emoji> <b>𝐀𝐮𝐭𝐨 𝐦𝐮𝐭𝐞</b> <tg-emoji emoji-id='6257780484281997093'>❌</tg-emoji>\n\n"
                     f"<blockquote>"
                     f"<tg-emoji emoji-id='4913497231492908158'>👤</tg-emoji> <code> </code>{user_label} {mention(message.from_user)} <tg-emoji emoji-id='6177007478182516158'>✨</tg-emoji>\n\n"
                     f"<tg-emoji emoji-id='4918087434840834979'>ℹ️</tg-emoji> <code> </code>{reason_label} (ဘိုင်အို/ဂျိုင်း/လင့်) ၃ ကြိမ်ပို့ခြင်း\n"
@@ -1127,11 +1127,11 @@ def handle_all(message):
             else:
                 bot.send_message(
                     chat_id,
-                    f"<tg-emoji emoji-id='5395695537687123235'>❌</tg-emoji> <b>သတိပေးချက် ({strikes}/3)</b> <tg-emoji emoji-id='5424818078833715060'>❌</tg-emoji>\n\n"
+                    f"<blockquote><tg-emoji emoji-id='5395695537687123235'>❌</tg-emoji> <b>သတိပေးချက် ({strikes}/3)</b> <tg-emoji emoji-id='5424818078833715060'>❌</tg-emoji></blockquote>\n"
                     f"<blockquote>"
-                    f"<tg-emoji emoji-id='5424972470023104089'>👤</tg-emoji> User: {mention(message.from_user)} <tg-emoji emoji-id='6177007478182516158'>✨</tg-emoji>\n\n"
-                    f"<tg-emoji emoji-id='5411225014148014586'>🚫</tg-emoji> (ဘိုင်အို / ဂျိုင်း / လင့်) ဆိုင်ရာ စာသားများ ပို့ခြင်းကို ခွင့်မပြုပါ။\n\n"
-                    f"<tg-emoji emoji-id='5215613971352004352'>⚠️</tg-emoji> ၃ ကြိမ် ပြုလုပ်ပါက Auto mute ဖြစ်ပါမည်။<tg-emoji emoji-id='5215361191051798408'>❤️</tg-emoji>"
+                    f"<tg-emoji emoji-id='5424972470023104089'>👤</tg-emoji> 𝐔𝐬𝐞𝐫: {mention(message.from_user)} <tg-emoji emoji-id='6177007478182516158'>✨</tg-emoji>\n"
+                    f"<tg-emoji emoji-id='5411225014148014586'>🚫</tg-emoji> (ဘိုင်အို / ဂျိုင်း / လင့်) ဆိုင်ရာ စာသားများ ပို့ခြင်းကို ခွင့်မပြုပါ။\n"
+                    f"<tg-emoji emoji-id='5215613971352004352'>⚠️</tg-emoji> ၃ ကြိမ် ပြုလုပ်ပါက 𝐀𝐮𝐭𝐨 𝐦𝐮𝐭𝐞 ဖြစ်ပါမည်။<tg-emoji emoji-id='5215361191051798408'>❤️</tg-emoji>"
                     f"</blockquote>",
                     parse_mode="HTML"
                )
